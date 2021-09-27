@@ -318,6 +318,17 @@
 							<li class="fragment">Apply clustering algorithm</li>
 						</ol>
 					</section>
+					<section>
+						<pre><code class="r" data-trim>
+							library(scran)
+							library(igraph)
+							g <- buildSNNGraph(sce, k=10, use.dimred = 'PCA')
+							clust <- cluster_walktrap(g)$membership
+							colLabels(sce) <- factor(clust)
+							plotReducedDim(sce, "TSNE", colour_by="label")
+						</code></pre>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/clustering_files/figure-html/tsne-clust-graph-1.png"></img>
+					</section>
 				</section>
 				<section>
 					<section>
@@ -332,6 +343,21 @@
 								<li class="fragment">DESeq2, edgeR, voom-limma, ...</li>
 							</ul></li>
 						</ul>
+					</section>
+					<section>
+						<pre><code class="r" data-trim>
+							markers <- findMarkers(sce)
+							interesting <- rownames(markers[[7]][1:5, ])
+							logFCs <- getMarkerEffects(interesting)
+							pheatmap(logFCs, breaks=seq(-5, 5, length.out=101))
+						</code></pre>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/marker-detection_files/figure-html/heat-focused-pbmc-1.png"></img>
+					</section>
+					<section>
+						<pre><code class="r" data-trim>
+							plotExpression(sce, x="label", features=interesting)
+						</code></pre>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/marker-detection_files/figure-html/viol-de-binom-1.png"></img>
 					</section>
 				</section>
 				<section>
