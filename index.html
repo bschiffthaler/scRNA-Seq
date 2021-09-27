@@ -141,7 +141,7 @@
 						</ul>
 						<br><br><hr class="fragment" data-fragment-index=4>
 						<p class="fragment" data-fragment-index=4>Tximeta/Tximport:</p>
-						<pre><code class="r fragment" data-fragment-index=4 data-trim data-noescape>
+						<pre class="fragment"><code class="r" data-fragment-index=4 data-trim data-noescape>
 							library(tximeta)
 							library(SingleCellExperiment)
 
@@ -149,7 +149,7 @@
 							sce &lt;- as(sc, "SingleCellExperiment")
 						</code></pre>
 						<p class="fragment" data-fragment-index=4>DropletUtils:</p>
-						<pre><code class="r fragment" data-fragment-index=4 data-trim data-noescape>
+						<pre class="fragment"><code class="r" data-fragment-index=4 data-trim data-noescape>
 							library(DropletUtils)
 
 							sce &lt;- read10xCounts(in_dir)
@@ -166,11 +166,36 @@
 							<li class="fragment">Cells with few expressed genes (diversity)</li>
 							<li class="fragment">High proportion of reads mapped to spike-ins</li>
 							<li class="fragment">High proportion of reads mapped to mitochondrial genes**</li>
-							<li class="fragment">Empty cells</li>
-							<li class="fragment">Doublets</li>
+							<li class="fragment">Empty cells (droplets)</li>
+							<li class="fragment">Doublets (droplets)</li>
 						</ul>
 
 						<p class="small fragment">** High proportions are indicative of poor-quality cells (Islam et al. 2014; Ilicic et al. 2016), presumably because of loss of cytoplasmic RNA from perforated cells. The reasoning is that, in the presence of modest damage, the holes in the cell membrane permit efflux of individual transcript molecules but are too small to allow mitochondria to escape, leading to a relative enrichment of mitochondrial transcripts. For single-nuclei RNA-seq experiments, high proportions are also useful as they can mark cells where the cytoplasm has not been successfully stripped</p>
+					</section>
+					<section>
+						<h3>Droplet specific - empty cells</h3>
+						<ul>
+							<li>Not all empty cells are free of RNA</li>
+							<li><code class="inline">DropletUtils</code> can use simulations to detect</li>
+						</ul>
+						<pre><code class="r" data-trim>
+							empt <- emptyDrops(counts(sce))
+						</code></pre>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/droplet-processing_files/figure-html/rankplot-1.png"></img>
+					</section>
+					<section>
+						<h3>Droplet specific - doublets</h3>
+						<ul>
+							<li> Cluster based: check for clusters whose expression lies between two other clusters</li>
+							<li> Simulation based</li>
+						</ul>
+						<pre><code class="r" data-trim>
+							library(scDblFinder)
+							dbl.out <- findDoubletClusters(sce)
+							dbl.dens <- computeDoubletDensity(sce, d=ncol(reducedDim(sce)))
+							plotTSNE(sce, colour_by="DoubletScore")
+						</code></pre>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/doublet-detection_files/figure-html/denstsne-1.png"></img>
 					</section>
 					<section>
 						<h3>Getting QC metrics</h3>
@@ -211,7 +236,7 @@
 						<ul>
 							<li class="fragment">Size factor (library size) - not actually balanced hence inaccurate for scRNA Seq</li>
 						</ul>
-						<pre><code class="fragment r" data-trim>
+						<pre class="fragment"><code class="r" data-trim>
 							library_sf <- librarySizeFactors(sce)
 						</code></pre>
 						<blockquote class="fragment">
@@ -227,7 +252,7 @@
 								<li class="fragment">Deconvolve size factors by cluster (cell type)</li>
 							</ol></li>
 						</ul>
-						<pre><code class="r fragment" data-trim>
+						<pre class="fragment"><code class="r" data-trim>
 							clust <- quickCluster(sce)
 							deconv_sf <- calculateSumFactors(sce, cluster=clust)
 						</code></pre>
@@ -237,7 +262,7 @@
 					</section>
 					<section>
 						<h3>Spike ins</h3>
-						<pre><code class="r fragment" data-trim>
+						<pre class="fragment"><code class="r" data-trim>
 							sce.richard <- computeSpikeFactors(sce.richard, "ERCC")
 						</code></pre>
 					</section>
