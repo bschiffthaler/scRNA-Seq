@@ -44,7 +44,8 @@
 					</section>
 					<section>
 						<h3>Evolution of scRNA Seq</h3>
-						<img class="stretch" data-src="img/41596_2018_Article_BFnprot2017149_Fig1_HTML.webp"></img>
+						
+						<img class="stretch" data-src="https://raw.githubusercontent.com/bschiffthaler/scRNA-Seq/main/img/41596_2018_Article_BFnprot2017149_Fig1_HTML.webp"></img>
 					</section>
 					<section>
 						<h3>Technologies: comparison</h3>
@@ -68,22 +69,22 @@
 					</section>
 					<section>
 						<h3>Demultiplexing doublets using genotype</h3>
-						<img class="stretch" data-src="img/demug_gt.webp">
+						<img class="stretch" data-src="https://raw.githubusercontent.com/bschiffthaler/scRNA-Seq/main/img/demug_gt.webp">
 						<p class="small">Kang, H., Subramaniam, M., Targ, S. et al. Multiplexed droplet single-cell RNA-sequencing using natural genetic variation. Nat Biotechnol 36, 89–94 (2018). </p>
 					</section>
 					<section>
 						<h3>Demultiplexing doublets using antibodies</h3>
-						<img class="stretch" data-src="img/hashdemux.webp">
+						<img class="stretch" data-src="https://raw.githubusercontent.com/bschiffthaler/scRNA-Seq/main/img/hashdemux.webp">
 						<p class="small">Stoeckius, M., Zheng, S., Houck-Loomis, B. et al. Cell Hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics. Genome Biol 19, 224 (2018) </p>
 					</section>
 					<section>
 						<h3>10X</h3>
-						<img class="stretch" data-src="img/10x.webp">
+						<img class="stretch" data-src="https://raw.githubusercontent.com/bschiffthaler/scRNA-Seq/main/img/10x.webp">
 						<p class="small">Zheng, G., Terry, J., Belgrader, P. et al. Massively parallel digital transcriptional profiling of single cells. Nat Commun 8, 14049 (2017).</p>
 					</section>
 					<section>
 						<h3>Combinatorial Indexing</h3>
-						<img class="stretch" data-src="img/ci.jpeg">
+						<img class="stretch" data-src="https://raw.githubusercontent.com/bschiffthaler/scRNA-Seq/main/img/ci.jpeg">
 						<p class="small">Cao, Junyue, et al. "Comprehensive single-cell transcriptional profiling of a multicellular organism." Science 357.6352 (2017)</p>
 					</section>
 				</section>
@@ -181,7 +182,7 @@
 						<pre><code class="r" data-trim>
 							empt <- emptyDrops(counts(sce))
 						</code></pre>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/droplet-processing_files/figure-html/rankplot-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.advanced/droplet-processing_files/figure-html/rankplot-1.png"></img>
 					</section>
 					<section>
 						<h3>Droplet specific - doublets</h3>
@@ -195,7 +196,7 @@
 							dbl.dens <- computeDoubletDensity(sce, d=ncol(reducedDim(sce)))
 							plotTSNE(sce, colour_by="DoubletScore")
 						</code></pre>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/doublet-detection_files/figure-html/denstsne-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.advanced/doublet-detection_files/figure-html/denstsne-1.png"></img>
 					</section>
 					<section>
 						<h3>Getting QC metrics</h3>
@@ -212,23 +213,23 @@
 					</section>
 					<section>
 						<h3>Check if discarded outliers are confounded with biology</h3>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/quality-control_files/figure-html/qc-dist-416b-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.basic/quality-control_files/figure-html/qc-dist-416b-1.png"></img>
 					</section>
 					<section>
 						<h3>Check if discarded outliers are confounded with biology (2)</h3>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/quality-control_files/figure-html/qc-mito-zeisel-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.basic/quality-control_files/figure-html/qc-mito-zeisel-1.png"></img>
 					</section>
 					<section>
 						<h3>Check if discarded outliers are confounded with biology (3)</h3>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/quality-control_files/figure-html/qc-mito-spike-zeisel-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.basic/quality-control_files/figure-html/qc-mito-spike-zeisel-1.png"></img>
 					</section>
-					<section>
+					<!-- <section>
 						<h3>Check if discarded outliers are confounded with biology (4)</h3>
 						<div style="display: flex;">
-						<img width="50%" flex="1" data-src="https://bioconductor.org/books/release/OSCA/quality-control_files/figure-html/discardplot416b-1.png"></img>
-						<img width="50%" flex="1" data-src="https://bioconductor.org/books/release/OSCA/quality-control_files/figure-html/discardplotpbmc-1.png"></img>
+						<img width="50%" flex="1" data-src="https://bioconductor.org/books/release/OSCA.basic/quality-control_files/figure-html/discardplot416b-1.png"></img>
+						<img width="50%" flex="1" data-src="https://bioconductor.org/books/release/OSCA.basic/quality-control_files/figure-html/discardplotpbmc-1.png"></img>
 						</div>
-					</section>
+					</section> -->
 				</section>
 				<section>
 					<section>
@@ -258,7 +259,7 @@
 						</code></pre>
 					</section>
 					<section>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/normalization_files/figure-html/deconv-zeisel-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.basic/normalization_files/figure-html/deconv-zeisel-1.png"></img>
 					</section>
 					<section>
 						<h3>Spike ins</h3>
@@ -285,7 +286,7 @@
 							    ylab="Variance of log-expression")
 							curve(fit$trend(x), col="dodgerblue", add=TRUE, lwd=2)
 						</code></pre>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/feature-selection_files/figure-html/trend-plot-pbmc-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.basic/feature-selection_files/figure-html/trend-plot-pbmc-1.png"></img>
 					</section>
 					<section>
 						<pre><code class="r" data-trim>
@@ -296,7 +297,7 @@
 							     xlim = c(1e-05, 1e2))
 							curve(fit2$trend(x), col="dodgerblue", add=TRUE, lwd=2)
 						</code></pre>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/feature-selection_files/figure-html/cv2-pbmc-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.advanced/feature-selection_files/figure-html/cv2-pbmc-1.png"></img>
 					</section>
 				</section>
 				<section>
@@ -311,19 +312,19 @@
 					</section>
 					<section>
 						<h3>Principal Component Analysis</h3>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/reduced-dimensions_files/figure-html/zeisel-pca-multi-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.basic/reduced-dimensions_files/figure-html/zeisel-pca-multi-1.png"></img>
 					</section>
 					<section>
 						<h3>t-SNE</h3>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/reduced-dimensions_files/figure-html/tsne-brain-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.basic/reduced-dimensions_files/figure-html/tsne-brain-1.png"></img>
 					</section>
 					<section>
 						<h3>UMAP</h3>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/reduced-dimensions_files/figure-html/umap-brain-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.basic/reduced-dimensions_files/figure-html/umap-brain-1.png"></img>
 					</section>
 					<section>
 						<h3>Criticisms</h3>
-						<img class="stretch" data-src="img/crit.png"></img>
+						<img class="stretch" data-src="https://raw.githubusercontent.com/bschiffthaler/scRNA-Seq/main/img/crit.png"></img>
 						<p class="small">https://www.biorxiv.org/content/10.1101/2021.08.25.457696v2</p>
 					</section>
 				</section>
@@ -352,7 +353,7 @@
 							colLabels(sce) <- factor(clust)
 							plotReducedDim(sce, "TSNE", colour_by="label")
 						</code></pre>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/clustering_files/figure-html/tsne-clust-graph-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.basic/clustering_files/figure-html/tsne-clust-graph-1.png"></img>
 					</section>
 				</section>
 				<section>
@@ -376,13 +377,13 @@
 							logFCs <- getMarkerEffects(interesting)
 							pheatmap(logFCs, breaks=seq(-5, 5, length.out=101))
 						</code></pre>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/marker-detection_files/figure-html/heat-focused-pbmc-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.advanced/marker-detection_files/figure-html/heat-focused-pbmc-1.png"></img>
 					</section>
 					<section>
 						<pre><code class="r" data-trim>
 							plotExpression(sce, x="label", features=interesting)
 						</code></pre>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/marker-detection_files/figure-html/viol-de-binom-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.advanced/marker-detection_files/figure-html/viol-de-binom-1.png"></img>
 					</section>
 				</section>
 				<section>
@@ -405,14 +406,14 @@
 							table(pred$labels)
 							plotScoreHeatmap(pred)
 						</code></pre>
-						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA/cell-annotation_files/figure-html/singler-heat-pbmc-1.png"></img>
+						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.basic/cell-annotation_files/figure-html/singler-heat-pbmc-1.png"></img>
 					</section>
 					<section>
 						<pre><code class="r" data-trim>
 							sce$label <- pred$labels
  							plotReducedDim(sce, "UMAP", colour_by = "label")
 						</code></pre>
-						<img class="stretch" data-src="/img/umap_ctype.png"></img>
+						<img class="stretch" data-src="https://raw.githubusercontent.com/bschiffthaler/scRNA-Seq/main/img/umap_ctype.png"></img>
 					</section>
 				</section>
 			</div>
