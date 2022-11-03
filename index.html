@@ -173,7 +173,7 @@
 
 						<p class="small fragment">** High proportions are indicative of poor-quality cells (Islam et al. 2014; Ilicic et al. 2016), presumably because of loss of cytoplasmic RNA from perforated cells. The reasoning is that, in the presence of modest damage, the holes in the cell membrane permit efflux of individual transcript molecules but are too small to allow mitochondria to escape, leading to a relative enrichment of mitochondrial transcripts. For single-nuclei RNA-seq experiments, high proportions are also useful as they can mark cells where the cytoplasm has not been successfully stripped</p>
 					</section>
-					<section>
+					<!-- <section>
 						<h3>Droplet specific - empty cells</h3>
 						<ul>
 							<li>Not all empty cells are free of RNA</li>
@@ -197,7 +197,7 @@
 							plotTSNE(sce, colour_by="DoubletScore")
 						</code></pre>
 						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.advanced/doublet-detection_files/figure-html/denstsne-1.png"></img>
-					</section>
+					</section> -->
 					<section>
 						<h3>Getting QC metrics</h3>
 						<pre><code class="r" data-trim>
@@ -222,6 +222,14 @@
 					<section>
 						<h3>Check if discarded outliers are confounded with biology (3)</h3>
 						<img class="stretch" data-src="https://bioconductor.org/books/release/OSCA.basic/quality-control_files/figure-html/qc-mito-spike-zeisel-1.png"></img>
+					</section>
+					<section>
+						<h3>Additional (advanced) QC</h3>
+						<ul>
+							<li>Empty droplets</li>
+							<li>Doublets</li>
+							<li>Ambient signal</li>
+						</ul>
 					</section>
 					<!-- <section>
 						<h3>Check if discarded outliers are confounded with biology (4)</h3>
